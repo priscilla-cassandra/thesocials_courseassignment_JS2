@@ -3,8 +3,14 @@ const BASE_URL = "https://v2.api.noroff.dev"
 async function apiClient (endpoint, options = {}){
     const {body, ...customOptions} = options
 
+    const accessToken = localStorage.getItem('accessToken')
+
     const headers = {
         'Content-Type': 'application/json'
+    }
+
+    if(accessToken){
+        headers['Authorization'] = `Bearer ${accessToken}`
     }
 
     const config = {
