@@ -19,10 +19,10 @@
   </head>
   <body>
     <h1>The Socials</h1>
-    <form>
+    <form id="register-form">
       <section class="form-field">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required />
+        <label for="name">Username</label>
+        <input type="text" id="name" name="name" required />
       </section>
       <section class="form-field">
         <label for="email">Email</label>
@@ -34,9 +34,13 @@
       </section>
       <button type="submit">Create user</button>
     </form>
+    <section>
+      <p id="success-error-message"></p>
+    </section>
     <section id="">
       <p>or</p>
       <a href="../index.html">Log in</a>
     </section>
+    <script type="module" src="../src/pages/register.js"></script>
   </body>
 </html>
