@@ -19,7 +19,7 @@
   </head>
   <body>
     <h1>The Socials</h1>
-    <form>
+    <form id="login-form">
       <section class="form-field">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required />
@@ -30,9 +30,13 @@
       </section>
       <button type="submit">Log in</button>
     </form>
+    <section>
+      <p id="error-message"></p>
+    </section>
     <section id="">
       <p>or</p>
       <a href="./pages/register.html">Register new user</a>
     </section>
+    <script type="module" src="./src/pages/login.js"></script>
   </body>
 </html>
