@@ -42,6 +42,6 @@ async function apiClient (endpoint, options = {}){
 }
 
 export const get = (endpoint) => apiClient(endpoint) //GET request only needs the endpoint
-export const post = (enpoint, body) => apiClient(endpoint, {body}) //POST request needs response body
+export const post = (endpoint, body) => apiClient(endpoint, {body}) //POST request needs response body
 export const put = (endpoint, body) => apiClient(endpoint, {method: 'PUT', body}) //PUT request needs response body
 export const del = (endpoint) => apiClient(endpoint, {method: 'DELETE'}) //DELETE only needs the endpoint
