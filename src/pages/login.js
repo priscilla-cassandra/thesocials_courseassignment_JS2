@@ -7,18 +7,22 @@ async function userLogin(loginDetails){
     try{
         const response = await post('/auth/login', loginDetails)
 
-        const {name, accessToken} = response.data
+        const {name, accessToken, apiKey} = response.data
 
         if(accessToken){
             localStorage.setItem('accessToken', accessToken)
             localStorage.setItem('name', name)
         }
 
+        if(apiKey){
+            localStorage.setItem('apiKey', apiKey)
+        }
+
         console.log('User logged in', response.data)
 
-        //setTimeout(()=>{
-            //window.location.href = '.../pages/feed.html'
-        //}, 1000)
+        setTimeout(()=>{
+            window.location.href = '/html-pages/feed.html'
+        }, 1000)
 
     }catch(error){
         console.error(error.message)
