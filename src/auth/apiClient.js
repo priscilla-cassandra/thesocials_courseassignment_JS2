@@ -3,10 +3,15 @@ const BASE_URL = "https://v2.api.noroff.dev"
 async function apiClient (endpoint, options = {}){
     const {body, ...customOptions} = options
 
+    const apiKey = localStorage.getItem('apiKey')
     const accessToken = localStorage.getItem('accessToken')
 
     const headers = {
         'Content-Type': 'application/json'
+    }
+
+    if(apiKey){
+        headers['X-Noroff-API-Key'] = apiKey.data.key
     }
 
     if(accessToken){
