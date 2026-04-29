@@ -15,7 +15,7 @@ async function userLogin(loginDetails){
         }
 
         if(apiKey){
-            localStorage.setItem('apiKey', apiKey)
+            localStorage.setItem('apiKey', apiKey.data.key)
         }
 
         console.log('User logged in', response.data)
