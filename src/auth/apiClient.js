@@ -1,4 +1,5 @@
 const BASE_URL = "https://v2.api.noroff.dev"
+const API_KEY = "7490ce2b-fd87-43b5-9ea8-b6f18695876e"
 
 async function apiClient (endpoint, options = {}){
     const {body, ...customOptions} = options
@@ -7,11 +8,12 @@ async function apiClient (endpoint, options = {}){
     const accessToken = localStorage.getItem('accessToken')
 
     const headers = {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'X-Noroff-API-Key': API_KEY
     }
 
     if(apiKey){
-        headers['X-Noroff-API-Key'] = apiKey.data.key
+        headers['X-Noroff-API-Key'] = apiKey
     }
 
     if(accessToken){
