@@ -1,8 +1,22 @@
 .feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .feed-post {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
 }
 
 .img-container {
+}
+
+.img-container img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
 }
