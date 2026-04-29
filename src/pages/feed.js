@@ -5,9 +5,11 @@ feedContainer.classList.add('feed-container')
 
 async function getAllPosts(){
     try{
-        const allPosts = await get('/social/posts')
+        const allPosts = await get('/social/posts?_author=true')
 
-        allPosts.forEach(function(post){
+        console.log(allPosts)
+
+        allPosts.data.forEach(function(post){
             const postContainer = document.createElement('a')
             postContainer.href=`.../pages/post.html?id=${post.id}`
             postContainer.classList.add('feed-post')
@@ -20,10 +22,16 @@ async function getAllPosts(){
             imageContainer.classList.add('img-container')
             postContainer.appendChild(imageContainer)
 
-            const postImage = document.createElement('img')
-            postImage.src = post.media?.url
-            postImage.alt = post.title
-            imageContainer.appendChild(postImage)            
+            //Not all posts has an image URL, så only render img if there is an imgURL present!
+            if(post.media?.url){
+                const postImage = document.createElement('img')
+                postImage.src = post.media.url
+                postImage.alt = post.title
+                imageContainer.appendChild(postImage)
+            }
+
+            feedContainer.appendChild(postContainer)
+            
         })   
 
     } catch(error){
