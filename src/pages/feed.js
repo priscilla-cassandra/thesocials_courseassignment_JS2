@@ -1,6 +1,8 @@
 import {get} from '../auth/apiClient.js'
-import { isLoggedIn } from '../auth/auth.js'
-import { siteAuthentication } from '../auth/auth.js'
+import { isLoggedIn, siteAuthentication } from '../auth/auth.js'
+
+isLoggedIn()
+siteAuthentication()
 
 const feedContainer = document.getElementById('feed-posts-container')
 feedContainer.classList.add('feed-container')
@@ -12,9 +14,13 @@ async function getAllPosts(){
         console.log(allPosts)
 
         allPosts.data.forEach(function(post){
-            const postContainer = document.createElement('a')
-            postContainer.href=`.../pages/post.html?id=${post.id}`
+            const postContainer = document.createElement('section')
             postContainer.classList.add('feed-post')
+
+            //Make the entire postContainer clickable
+            postContainer.addEventListener('click', ()=>{
+                window.location.href =`/html-pages/post.html?id=${post.id}`
+            })
 
             const postTitle = document.createElement('h3')
             postTitle.textContent = post.title
@@ -32,6 +38,21 @@ async function getAllPosts(){
                 imageContainer.appendChild(postImage)
             }
 
+            //When clicking the profile-name, go to the profile
+            if(post.author?.name){
+                const profileLink = document.createElement('a')
+                profileLink.href =`/html-pages/profile.html?name=${post.author.name}`
+                profileLink.textContent = `@${post.author.name}`
+                
+                //Prevent parent eventListener (on the post container) to run
+                profileLink.addEventListener('click', (event)=>{
+                    event.stopPropagation()
+                })
+
+                postContainer.appendChild(profileLink)
+
+            }
+
             feedContainer.appendChild(postContainer)
             
         })   
@@ -43,5 +64,3 @@ async function getAllPosts(){
 }
 
 getAllPosts()
-isLoggedIn()
-siteAuthentication()
