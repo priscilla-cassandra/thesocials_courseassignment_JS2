@@ -1,4 +1,6 @@
 import {get} from '../auth/apiClient.js'
+import { isLoggedIn } from '../auth/auth.js'
+import { siteAuthentication } from '../auth/auth.js'
 
 const feedContainer = document.getElementById('feed-posts-container')
 feedContainer.classList.add('feed-container')
@@ -41,3 +43,5 @@ async function getAllPosts(){
 }
 
 getAllPosts()
+isLoggedIn()
+siteAuthentication()
