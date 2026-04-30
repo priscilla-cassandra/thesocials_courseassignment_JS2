@@ -16,8 +16,31 @@ async function getProfilePosts(){
     
     console.log(profilePosts)
 
+    const userName = document.getElementById('username')
+    userName.textContent = profileName
+    userName.classList.add('profile-username')
+
     profilePosts.data.forEach((post)=>{
-        
+        const postContainer = document.createElement('a')
+        postContainer.href=`/html-pages/post.html?id=${post.id}`
+        postContainer.classList.add('profile-post-container')
+
+        const postTitle = document.createElement('h3')
+        postTitle.textContent = post.title
+        postTitle.classList.add('post-title') 
+        postContainer.appendChild(postTitle)
+
+        const imageContainer = document.createElement('section')
+        imageContainer.classList.add('profile-img-container')
+        postContainer.appendChild(imageContainer)
+
+        const postImage = document.createElement('img')
+        postImage.src = post.media?.url
+        postImage.alt = post.title
+        imageContainer.appendChild(postImage)
+
+        profileGrid.appendChild(postContainer)
+
     })
 
 }
