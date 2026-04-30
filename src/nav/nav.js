@@ -1,4 +1,5 @@
 import { logout } from "../auth/auth.js"
+import { getAccessToken } from "../auth/auth.js"
 
 export const navLinks = [
     {name: 'Feed', href: '/html-pages/feed.html', iconClass: 'fa-regular fa-house'},
@@ -25,6 +26,13 @@ export function renderNavigation(links){
                 event.preventDefault()
                 logout()
                 window.location.href = link.href
+            })
+        }
+
+        if(link.name === 'MyProfile'){
+            a.addEventListener('click', (event)=>{
+                event.preventDefault()
+
             })
         }
 
