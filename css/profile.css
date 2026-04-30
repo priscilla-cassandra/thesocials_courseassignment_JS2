@@ -1,5 +1,41 @@
+.profile-username {
+  text-align: center;
+}
+
+.post-title {
+  height: 3rem;
+}
+
 .profile-grid-container {
   display: grid;
-  grid-template-columns: 3, 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 900px;
+}
+
+.profile-post-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(43, 226, 58);
+}
+
+.profile-img-container img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .profile-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .profile-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
