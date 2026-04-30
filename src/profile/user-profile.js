@@ -1,8 +1,13 @@
 import { get } from "../auth/apiClient.js";
 import { isLoggedIn, siteAuthentication } from "../auth/auth.js";
+import { renderNavigation, navLinks } from "../nav/nav.js";
 
 isLoggedIn()
 siteAuthentication()
+
+const navigation = document.getElementById('sidebar-navigation')
+const navbar = renderNavigation(navLinks)
+navigation.appendChild(navbar)
 
 const profileGrid = document.getElementById('profile-post-grid')
 profileGrid.classList.add('profile-grid-container')
