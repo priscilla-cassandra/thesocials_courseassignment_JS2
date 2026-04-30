@@ -51,6 +51,13 @@ async function getSinglePost(){
         postDate.textContent = post.created.slice(0, 10)
         singlePostContainer.appendChild(postDate)
 
+        if(isLoggedIn && localStorage.getItem('name') === post.author.name){
+            const editbutton = document.createElement('button')
+            editbutton.textContent = 'Edit post'
+            editbutton.classList.add('edit-button')
+            singlePostContainer.appendChild(editbutton)
+        }
+
     }catch(error){
         console.error(error.message)
         singlePostContainer.textContent = 'Could not get post. Pleased try again!'
