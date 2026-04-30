@@ -1,3 +1,5 @@
+import { logout } from "../auth/auth.js"
+
 export const navLinks = [
     {name: 'Feed', href: '/html-pages/feed.html', iconClass: 'fa-regular fa-house'},
     {name: 'MyProfile', href: '/html-pages/profile.html', iconClass: 'fa-regular fa-user'},
@@ -17,6 +19,15 @@ export function renderNavigation(links){
         icon.className = link.iconClass
 
         a.appendChild(icon)
+
+        if(link.name === 'Logout'){
+            a.addEventListener('click', (event)=>{
+                event.preventDefault()
+                logout()
+                window.location.href = link.href
+            })
+        }
+
         li.appendChild(a)
         ul.appendChild(li)
     })
