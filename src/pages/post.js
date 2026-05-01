@@ -56,6 +56,10 @@ async function getSinglePost(){
             editbutton.textContent = 'Edit post'
             editbutton.classList.add('edit-button')
             singlePostContainer.appendChild(editbutton)
+
+            editbutton.addEventListener('click', ()=>{
+                window.location.href = `/html-pages/edit.html?id=${post.id}`
+            })
         }
 
     }catch(error){
