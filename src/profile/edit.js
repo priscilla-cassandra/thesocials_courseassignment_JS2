@@ -1,6 +1,7 @@
 import { put, get } from "../auth/apiClient.js";
 import { renderNavigation, navLinks } from "../nav/nav.js";
 import { logout, isLoggedIn, siteAuthentication } from "../auth/auth.js";
+import { deletePost } from "./delete.js";
 
 isLoggedIn()
 siteAuthentication()
@@ -14,6 +15,9 @@ const imageUrlInput = document.getElementById('edit-imageURL')
 const titleInput = document.getElementById('edit-title')
 const captionInput = document.getElementById('edit-caption')
 const updatePostMessage = document.getElementById('update-post-message')
+
+const deleteButton = document.getElementById('delete-post-button')
+deleteButton.classList.add('delete-button')
 
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
@@ -77,3 +81,10 @@ function submitUpdatePostForm(event){
 
 getPostToEdit()
 editForm.addEventListener('submit', submitUpdatePostForm)
+deleteButton.addEventListener('click', ()=>{
+    const deleteConfirmation = confirm('Are you sure you want to delete this post?')
+
+    if(deleteConfirmation){
+        deletePost(id)
+    }
+})
