@@ -1,6 +1,12 @@
 const BASE_URL = "https://v2.api.noroff.dev"
 const API_KEY = "7490ce2b-fd87-43b5-9ea8-b6f18695876e"
 
+/**
+ * A reusable API service that performs HTTP methods based on endpoint and options
+ * @param {*} endpoint The endpoint for the HTTP method
+ * @param {*} options Optional argument that is added to configure the HTTP request
+ * @returns A JSON response depending on the HTTP request
+ */
 async function apiClient (endpoint, options = {}){
     const {body, ...customOptions} = options
 
