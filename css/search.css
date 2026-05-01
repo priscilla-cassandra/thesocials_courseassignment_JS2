@@ -1,0 +1,32 @@
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  max-width: 600px;
+}
+
+.post-container-on-search {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(224, 221, 216);
+}
+
+.post-container-on-search img {
+  width: 100%;
+  aspect-ratio: 1.5/1.3;
+  object-fit: cover;
+  display: block;
+}
+
+.post-title-search {
+  height: 1.5rem;
+  padding: 0.2rem;
+}
+
+@media (min-width: 600px) {
+  .results-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
