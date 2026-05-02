@@ -42,6 +42,7 @@ export async function followOrUnfollowUser(profileName){
 
     let isFollowing = false
 
+    //If you follow the user, set isFollowing to true
     following.forEach(followed =>{
         if(followed.name === profileName){
             isFollowing = true
@@ -52,11 +53,15 @@ export async function followOrUnfollowUser(profileName){
     followButton.textContent = isFollowing ? 'Unfollow' : 'Follow'
 
     followButton.addEventListener('click', async()=>{
+        //If isFollowing is true, onclick will call the unfollow endpont
+        //change the button text, and set isFollowing to false
         if(isFollowing){
             await unfollowUser (profileName)
             isFollowing = false
             followButton.textContent = 'Follow'
         }else{
+            //If isFollowing is false, onclick will call the follow endpoint
+            //Change the button text, and set isFollowing to true
             await followUser(profileName)
             isFollowing = true
             followButton.textContent = 'Unfollow'
