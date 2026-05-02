@@ -35,11 +35,6 @@ async function getProfilePosts(){
         postContainer.href=`/html-pages/post.html?id=${post.id}`
         postContainer.classList.add('profile-post-container')
 
-        const postTitle = document.createElement('h3')
-        postTitle.textContent = post.title
-        postTitle.classList.add('post-title') 
-        postContainer.appendChild(postTitle)
-
         const imageContainer = document.createElement('section')
         imageContainer.classList.add('profile-img-container')
         postContainer.appendChild(imageContainer)
