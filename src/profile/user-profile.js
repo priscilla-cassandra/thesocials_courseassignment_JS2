@@ -1,6 +1,7 @@
 import { get } from "../auth/apiClient.js";
 import { isLoggedIn, siteAuthentication } from "../auth/auth.js";
 import { renderNavigation, navLinks } from "../nav/nav.js";
+import { followOrUnfollowUser } from "./following.js";
 
 isLoggedIn()
 siteAuthentication()
@@ -21,10 +22,14 @@ async function getProfilePosts(){
     
     console.log(profilePosts)
 
+    //Display profile username
     const userName = document.getElementById('username')
     userName.textContent = profileName
     userName.classList.add('profile-username')
 
+    await followOrUnfollowUser(profileName)
+
+    //Render each post like this
     profilePosts.data.forEach((post)=>{
         const postContainer = document.createElement('a')
         postContainer.href=`/html-pages/post.html?id=${post.id}`
