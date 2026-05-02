@@ -8,8 +8,27 @@
   width: 95%;
   max-width: 500px;
   margin: 0 auto;
-  background-color: rgb(224, 221, 216);
-  padding: 0.5rem;
+  background-color: #d8a48f;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.feed-post h3 {
+  margin-top: 0;
+}
+
+.feed-post a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.feed-post a:hover {
+  text-decoration: underline;
+}
+
+.img-container {
+  margin-bottom: 1rem;
 }
 
 .img-container img {
