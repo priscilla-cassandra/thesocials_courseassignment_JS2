@@ -28,11 +28,6 @@ function renderPosts(posts){
         postContainer.classList.add('post-container-on-search')
         resultsContainer.appendChild(postContainer)
 
-        const title = document.createElement('p')
-        title.classList.add('post-title-search')
-        title.textContent = post.title
-        postContainer.appendChild(title)
-
         if(post.media?.url){
             const postImage = document.createElement('img')
             postImage.src = post.media.url
