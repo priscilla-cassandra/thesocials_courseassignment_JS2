@@ -3,10 +3,11 @@
   display: flex;
   justify-content: center;
   padding: 0;
+  margin-top: 1.5rem;
 }
 
 .navbar a {
   color: black;
-  padding: 2rem 1rem;
+  padding: 0 1rem;
   font-size: 1.5rem;
 }
