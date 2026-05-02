@@ -29,5 +29,10 @@ form {
 }
 
 .search-bar {
-  margin: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.search-bar input {
+  width: 80%;
 }
