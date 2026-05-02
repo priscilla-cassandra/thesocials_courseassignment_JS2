@@ -27,7 +27,6 @@
 .profile-post-container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(43, 226, 58);
 }
 
 .profile-img-container img {
