@@ -12,6 +12,13 @@ navigation.appendChild(navbar)
 const newPostForm = document.getElementById('new-post')
 const postMessage = document.getElementById('new-post-message-display')
 
+/**
+ * Creates a new post and sendt it to the API 
+ * @param {object} postInput The data that is collected from the form
+ * @param {string} postInput.title The title of the new post
+ * @param {string} postInput.caption The description of the post
+ * @param {string} postInput.imageURL An image URL to add an image to the post (this is optional)
+ */
 async function createNewPost(postInput){
     try{
         
