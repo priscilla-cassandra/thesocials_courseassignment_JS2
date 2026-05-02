@@ -1,5 +1,5 @@
 .post-container {
-  background-color: rgb(224, 221, 216);
+  background-color: #d8a48f;
   display: flex;
   flex-direction: column;
   width: 95%;
@@ -8,6 +8,17 @@
   border: 1px solid #ddd;
   padding: 0 1rem;
   padding-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.post-container a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.post-container a:hover {
+  text-decoration: underline;
 }
 
 .img-container img {
@@ -24,11 +35,11 @@
   border-radius: 0.5rem;
   border: 1px solid;
   font-weight: 500;
-  background-color: #edd0e4;
+  background-color: #fff4ee;
 }
 
 .edit-button:hover {
-  background-color: #dcb3cf;
+  background-color: #efdcd3;
 }
 
 @media (min-width: 600px) {
