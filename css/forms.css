@@ -1,0 +1,43 @@
+.loginform,
+.registerform,
+.editform,
+.newpost {
+  width: 80%;
+  max-width: 450px;
+  margin: 1rem auto;
+  background-color: #d8a48f;
+  padding: 1rem 0;
+  border-radius: 10px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-bottom: 0.4rem;
+}
+
+.form-field input {
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+textarea {
+  border-radius: 5px;
+}
+
+.option {
+  text-align: center;
+}
+
+.option a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.option a:hover {
+  text-decoration: underline;
+}
