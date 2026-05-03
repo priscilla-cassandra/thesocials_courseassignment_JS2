@@ -18,8 +18,6 @@ async function userLogin(loginDetails){
             localStorage.setItem('apiKey', apiKey.data.key)
         }
 
-        console.log('User logged in', response.data)
-
         setTimeout(()=>{
             window.location.href = '/html-pages/feed.html'
         }, 1000)
@@ -33,8 +31,8 @@ async function userLogin(loginDetails){
 
 function submitLoginForm(event){
     event.preventDefault()
-    const formData = new FormData(event.target)
-    const formFields = Object.fromEntries(formData)
+    const formData = new FormData(event.target) //event.target = the form that was submitted. formData collects all the values from the input fields in the form
+    const formFields = Object.fromEntries(formData) //Object.fromEntries turns formDate into a JavaScript Object
     userLogin(formFields)
 }
 
