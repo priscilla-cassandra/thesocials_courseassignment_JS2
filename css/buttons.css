@@ -1,7 +1,8 @@
 .delete-button,
 .update-button,
 .publish-button,
-.login-button {
+.login-button,
+.register-button {
   width: 60%;
   max-width: 100px;
   border-radius: 0.3rem;
@@ -16,7 +17,8 @@
 
 .update-button:hover,
 .publish-button:hover,
-.login-button:hover {
+.login-button:hover,
+.register-button:hover {
   background-color: #efdcd3;
 }
 
@@ -26,7 +28,8 @@
 
 .update-button,
 .publish-button,
-.login-button {
+.login-button,
+.register-button {
   background-color: #fff4ee;
 }
 
@@ -47,7 +50,8 @@
   .delete-button,
   .update-button,
   .publish-button,
-  .login-button {
+  .login-button,
+  .register-button {
     font-size: 1rem;
   }
 }
