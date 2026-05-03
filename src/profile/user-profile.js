@@ -24,7 +24,7 @@ async function getProfilePosts(){
 
     //Display profile username
     const userName = document.getElementById('username')
-    userName.textContent = profileName
+    userName.textContent = `@${profileName}`
     userName.classList.add('profile-username')
 
     await followOrUnfollowUser(profileName)
