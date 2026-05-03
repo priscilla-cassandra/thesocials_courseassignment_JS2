@@ -7,11 +7,13 @@ async function registerNewUser(userInput) {
     try{
         const newUser = await post('/auth/register', userInput)
         messageDisplay.textContent = 'New user registered! You can now log in'
+        messageDisplay.classList.add('success-message')
         
         console.log('User Created', newUser)
     } catch(error){
         console.error(error.message)
         messageDisplay.textContent = 'Could not create new user. Try again'
+        messageDisplay.classList.add('error-message')
     }
 }
 
