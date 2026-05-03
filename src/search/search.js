@@ -63,7 +63,7 @@ function debounce (func, delay){
 
 const debounceSearch = debounce(searchForPosts, 300)
 
-searchField.addEventListener('input', (event)=>{
+function handleSearch (event){
     const query = event.target.value.trim()
 
     if(!query){
@@ -72,7 +72,10 @@ searchField.addEventListener('input', (event)=>{
     }
 
     debounceSearch(query)
-})
+}
+
+searchField.addEventListener('input', handleSearch)
+searchField.addEventListener('keyup', handleSearch)
 
 searchField.addEventListener('keydown', (event)=>{
     if(event.key === 'Enter'){
