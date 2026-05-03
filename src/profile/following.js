@@ -26,7 +26,10 @@ export async function followOrUnfollowUser(profileName){
 
     //Stop function here if the profile that is being rendered
     //is the user that is logged in
-    if(profileName === loggedInUser) return
+    if(profileName === loggedInUser) {
+        followButton.classList.add('hidden')
+        return
+    }
 
     //Get logged in users follower list to see if logged in user follows the user-profile
     const profileData = await get(`/social/profiles/${loggedInUser}?_following=true`)
