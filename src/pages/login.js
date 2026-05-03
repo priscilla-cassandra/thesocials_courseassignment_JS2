@@ -27,6 +27,7 @@ async function userLogin(loginDetails){
     }catch(error){
         console.error(error.message)
         loginErrorMessage.textContent = "Sorry, you were not able to log in. Please try again"
+        loginErrorMessage.classList.add('error-message')
     }
 }
 
