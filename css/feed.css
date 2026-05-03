@@ -1,3 +1,8 @@
+.welcome-user {
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
 .feed-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +34,10 @@
 
 .img-container {
   margin-bottom: 1rem;
+}
+
+.img-container:hover {
+  cursor: pointer;
 }
 
 .img-container img {
