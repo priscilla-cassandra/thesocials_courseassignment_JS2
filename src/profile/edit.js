@@ -63,6 +63,7 @@ async function updatePost(id){
         await put(`/social/posts/${id}`, requestBody)
         
         updatePostMessage.textContent = 'Your post was updated! Lets have a look at it...'
+        updatePostMessage.classList.add('success-message')
         setTimeout(()=>{
             window.location.href = `/html-pages/post.html?id=${id}`
         }, 2000)
@@ -70,6 +71,7 @@ async function updatePost(id){
     }catch(error){
         console.error(error.message)
         updatePostMessage.textContent = 'There was a problem with editing your post. Please try again!'
+        updatePostMessage.classList.add('error-message')
     }
 }
 
