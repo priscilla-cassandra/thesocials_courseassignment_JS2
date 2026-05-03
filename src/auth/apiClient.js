@@ -8,7 +8,7 @@ const API_KEY = "7490ce2b-fd87-43b5-9ea8-b6f18695876e"
  * @returns A JSON response depending on the HTTP request
  */
 async function apiClient (endpoint, options = {}){
-    const {body, ...customOptions} = options
+    const {body, ...customOptions} = options //Separate body from ...customOptions to check if a body exists (to decide the HTTP method), keeping customOptions separate
 
     const apiKey = localStorage.getItem('apiKey')
     const accessToken = localStorage.getItem('accessToken')
@@ -27,9 +27,9 @@ async function apiClient (endpoint, options = {}){
     }
 
     const config = {
-        method: body ? 'POST' : 'GET',
-        ...customOptions,
-        headers: {
+        method: body ? 'POST' : 'GET', //If there is a body, its a POST request, if not its a GET request
+        ...customOptions, //customOptions will override the default method
+        headers: { //Spread default headers first, then custom headers, so that the custom overrides the default
             ...headers,
             ...customOptions.headers
         }
