@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.follow-button {
-  display: flex;
-  justify-self: center;
-}
-
 .hidden {
   display: none;
 }
