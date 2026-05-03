@@ -30,6 +30,7 @@
 .publish-button,
 .login-button,
 .register-button {
+  color: black;
   background-color: #fff4ee;
 }
 
