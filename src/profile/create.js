@@ -39,6 +39,7 @@ async function createNewPost(postInput){
         const newPostId = newPost.data.id
 
         postMessage.textContent = 'Your post was published! Lets have a look at it!'
+        postMessage.classList.add('success-message')
         setTimeout(()=>{
             window.location.href = `/html-pages/post.html?id=${newPostId}`
         }, 2000)
@@ -46,6 +47,7 @@ async function createNewPost(postInput){
     }catch(error){
         console.error(error.message)
         postMessage.textContent = 'Could not publish new post. Please try again'
+        postMessage.classList.add('error-message')
     }
 }
 
