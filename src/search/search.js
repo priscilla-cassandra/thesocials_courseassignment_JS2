@@ -4,10 +4,14 @@ const searchField = document.getElementById('site-search')
 const resultsContainer = document.getElementById('search-result')
 resultsContainer.classList.add('results-container')
 
+let currentQuery = ''
+
 async function searchForPosts(query){
     try{
         const response = await get(`/social/posts/search?q=${(query)}`)
-        renderPosts(response.data)
+        if(query === currentQuery){
+          renderPosts(response.data)  
+        }
     }catch(error){
         console.error(error.message)
     }
@@ -65,6 +69,7 @@ const debounceSearch = debounce(searchForPosts, 300)
 
 function handleSearch (event){
     const query = event.target.value.trim()
+    currentQuery = query
 
     if(!query){
         resultsContainer.innerHTML = ''
