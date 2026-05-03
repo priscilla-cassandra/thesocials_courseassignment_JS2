@@ -28,8 +28,7 @@ export async function followOrUnfollowUser(profileName){
     //is the user that is logged in
     if(profileName === loggedInUser) return
 
-    //Get logged in users follower list to see if logged in user
-    //follows the user-profile
+    //Get logged in users follower list to see if logged in user follows the user-profile
     const profileData = await get(`/social/profiles/${loggedInUser}?_following=true`)
     
     let following
