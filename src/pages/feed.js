@@ -57,11 +57,8 @@ async function getAllPosts(){
                 })
 
                 postContainer.appendChild(profileLink)
-
             }
-
-            feedContainer.appendChild(postContainer)
-            
+            feedContainer.appendChild(postContainer)     
         })   
 
     } catch(error){

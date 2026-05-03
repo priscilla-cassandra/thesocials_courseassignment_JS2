@@ -20,8 +20,7 @@ const postMessage = document.getElementById('new-post-message-display')
  * @param {string} postInput.imageURL An image URL to add an image to the post (this is optional)
  */
 async function createNewPost(postInput){
-    try{
-        
+    try{ 
         const requestBody = {
             title: postInput.title,
             body: postInput.caption,

@@ -57,7 +57,6 @@ async function updatePost(id){
     }
 
     try{
-        
         await put(`/social/posts/${id}`, requestBody)
         
         updatePostMessage.textContent = 'Your post was updated! Lets have a look at it...'
