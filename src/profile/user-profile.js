@@ -19,8 +19,6 @@ const profileName = params.get('name')
 async function getProfilePosts(){
 
     const profilePosts = await get(`/social/profiles/${profileName}/posts?_author=true`)
-    
-    console.log(profilePosts)
 
     //Display profile username
     const userName = document.getElementById('username')
