@@ -27,8 +27,6 @@ async function getPostToEdit(){
         const postToEdit = await get(`/social/posts/${id}?_author=true`)
         const result = postToEdit.data
 
-        console.log(result) //REMOVE
-
         if(result.media?.url){
             imageUrlInput.value = result.media.url
         }
@@ -78,11 +76,12 @@ async function updatePost(id){
 function submitUpdatePostForm(event){
     event.preventDefault()
     updatePost(id)
-
 }
 
 getPostToEdit()
+
 editForm.addEventListener('submit', submitUpdatePostForm)
+
 deleteButton.addEventListener('click', ()=>{
     const deleteConfirmation = confirm('Are you sure you want to delete this post?')
 

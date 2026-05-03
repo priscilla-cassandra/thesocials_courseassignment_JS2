@@ -20,8 +20,6 @@ async function getAllPosts(){
     try{
         const allPosts = await get('/social/posts?_author=true')
 
-        console.log(allPosts)
-
         allPosts.data.forEach(function(post){
             const postContainer = document.createElement('section')
             postContainer.classList.add('feed-post')

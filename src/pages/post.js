@@ -20,7 +20,6 @@ async function getSinglePost(){
     try{
         const singlePost = await get(`/social/posts/${id}?_author=true`)
         const post = singlePost.data
-        console.log(singlePost)
 
         const postTitle = document.createElement('h3')
         postTitle.textContent = post.title 
