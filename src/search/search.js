@@ -49,6 +49,7 @@ function renderPosts(posts){
 function debounce (func, delay){
     let timeoutId
 
+    //Returns a function that wraps the original function with the timer logic
     return function (...args){
         const context = this
 
