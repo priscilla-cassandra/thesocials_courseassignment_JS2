@@ -20,6 +20,10 @@
   display: block;
 }
 
+.post-container-on-search:hover {
+  cursor: pointer;
+}
+
 .post-title-search {
   height: 1.5rem;
   padding: 0.2rem;
