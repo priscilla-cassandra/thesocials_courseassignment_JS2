@@ -12,6 +12,10 @@ navigation.appendChild(navbar)
 const feedContainer = document.getElementById('feed-posts-container')
 feedContainer.classList.add('feed-container')
 
+const welcomeUsername = document.getElementById('welcome-username')
+const loggedInUser = localStorage.getItem('name')
+welcomeUsername.textContent = `Hi, @${loggedInUser}!`
+
 async function getAllPosts(){
     try{
         const allPosts = await get('/social/posts?_author=true')
