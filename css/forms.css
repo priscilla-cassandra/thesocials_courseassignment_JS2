@@ -41,3 +41,19 @@ textarea {
 .option a:hover {
   text-decoration: underline;
 }
+
+.new-post-message,
+.update-post-success-msg,
+.register-message,
+.login-error {
+  text-align: center;
+  font-weight: 500;
+}
+
+.success-message {
+  color: #2e7d32;
+}
+
+.error-message {
+  color: #c62828;
+}
