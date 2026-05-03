@@ -1,6 +1,7 @@
 .delete-button,
 .update-button,
-.publish-button {
+.publish-button,
+.login-button {
   width: 60%;
   max-width: 100px;
   border-radius: 0.3rem;
@@ -14,7 +15,8 @@
 }
 
 .update-button:hover,
-.publish-button:hover {
+.publish-button:hover,
+.login-button:hover {
   background-color: #efdcd3;
 }
 
@@ -23,7 +25,8 @@
 }
 
 .update-button,
-.publish-button {
+.publish-button,
+.login-button {
   background-color: #fff4ee;
 }
 
@@ -43,7 +46,8 @@
 @media (min-width: 600px) {
   .delete-button,
   .update-button,
-  .publish-button {
+  .publish-button,
+  .login-button {
     font-size: 1rem;
   }
 }
