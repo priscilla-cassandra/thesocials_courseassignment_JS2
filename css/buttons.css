@@ -50,6 +50,10 @@
   background-color: #d8a48f;
 }
 
+.hidden {
+  display: none;
+}
+
 @media (min-width: 600px) {
   .delete-button,
   .update-button,
