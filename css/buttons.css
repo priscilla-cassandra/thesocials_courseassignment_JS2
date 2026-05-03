@@ -36,6 +36,9 @@
 }
 
 .follow-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #efd1c4;
   color: black;
   padding: 0.5rem;
